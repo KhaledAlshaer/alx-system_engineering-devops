@@ -26,5 +26,6 @@ do
 	    ;;
     esac
 
-    let COUNTER+=1
+    ((COUNTER++))
 done
+
