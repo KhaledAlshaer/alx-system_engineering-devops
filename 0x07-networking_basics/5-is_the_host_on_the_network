@@ -2,8 +2,7 @@
 # Is the host on the network
 
 if [ $# -ne 1 ]; then
-    echo "Usage: $(basename "$0") {IP_ADDRESS}"
+    echo "Usage: $0 {IP_ADDRESS}"
 else
-    echo "PING $1"
     ping -c 5 "$1"
 fi
