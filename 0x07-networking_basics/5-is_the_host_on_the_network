@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Script that pings an IP address passed as an argument.
 
+
 if [[ -n "$1" ]]; then
 	ping -c 5 "$1"
 else
