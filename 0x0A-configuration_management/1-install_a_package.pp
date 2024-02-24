@@ -1,7 +1,11 @@
 # install puppet-lint gem.
 
-package { 'puppet-lint':
-  ensure          => '2.5.0',
-  provider        => 'gem',
-  install_options => ['--no-document'],
+package{'flask':
+  ensure   => '2.1.0',
+  provider => 'pip3'
+}
+
+package{'werkzeug':
+  ensure   => '2.1.1',
+  provider => 'pip3'
 }
