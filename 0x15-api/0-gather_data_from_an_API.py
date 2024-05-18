@@ -23,7 +23,7 @@ if __name__ == '__main__':
     all_todo = len(todo_data)
     complete = len(completed)
 
-    print(f"Employee {name} is done with tasks ({complete}/{all_todo}):")
+    print(f"Employee {name} is done with tasks({complete}/{all_todo}):")
 
     for task in completed:
         print(f"\t {task}")
