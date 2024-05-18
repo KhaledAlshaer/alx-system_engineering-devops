@@ -20,8 +20,10 @@ if __name__ == '__main__':
 
     completed = [td['title'] for td in todo if td['completed']]
 
-    #name = request.get("name")
     all_todo = len(todo_data)
     complete = len(completed)
 
     print(f"Employee {name} is done with tasks ({complete}/{all_todo})")
+
+    for todo in completed:
+        print(f"\t {todo}")
