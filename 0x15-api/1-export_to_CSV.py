@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Python script to export data in the CSV format"""
+
 import csv
 import requests
 import sys
@@ -7,7 +8,7 @@ import sys
 
 if __name__ == '__main__':
 
-    file_name = "USER_ID.csv"
+    file_name = f"{user_id}.csv"
     link = "https://jsonplaceholder.typicode.com/"
     employee_id = sys.argv[1]
     params = {"userId": employee_id}
