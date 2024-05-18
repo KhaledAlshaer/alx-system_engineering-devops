@@ -18,5 +18,3 @@ if __name__ == '__main__':
     complete = len(completed)
 
     print(f"Employee {name} is done with tasks ({complete}/{all_todo})")
-
-    #Employee EMPLOYEE_NAME is done with tasks(NUMBER_OF_DONE_TASKS/TOTAL_NUMBER_OF_TASKS):
