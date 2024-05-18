@@ -26,4 +26,4 @@ if __name__ == '__main__':
     print(f"Employee {name} is done with tasks ({complete}/{all_todo})")
 
     for task in completed:
-        print(f"\t {task}")
+        print(f" \t {task}")
