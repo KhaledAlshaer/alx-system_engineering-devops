@@ -18,12 +18,12 @@ if __name__ == '__main__':
     todo = requests.get(f"{link}/todos", params=params)
     todo_data = todo.json()
 
-    completed = [td['title'] for td in todo if td['completed']]
+    completed = [td['title'] for td in todo_data if td['completed']]
 
     all_todo = len(todo_data)
     complete = len(completed)
 
     print(f"Employee {name} is done with tasks ({complete}/{all_todo})")
 
-    for todo in completed:
-        print("\t {}".format(todo))
+    for task in completed:
+        print(f"\t {task}")
