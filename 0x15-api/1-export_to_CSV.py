@@ -8,13 +8,14 @@ import sys
 
 if __name__ == '__main__':
 
-    file_name = f"{user_id}.csv"
-    link = "https://jsonplaceholder.typicode.com/"
     employee_id = sys.argv[1]
+    file_name = f"{employee_id}.csv"
+    link = "https://jsonplaceholder.typicode.com/"
     params = {"userId": employee_id}
 
     request = requests.get(f"{link}/users/{employee_id}")
-    data = request.json()
+    user_data = request.json()
+    user_name = user_data.get("username")
 
     todo = requests.get(f"{link}/todos", params=params)
     todo_data = todo.json()
@@ -22,11 +23,11 @@ if __name__ == '__main__':
     csv_data = [
             [
                 employee_id,
-                todo.get["username"],
-                todo.get["completed"],
-                todo.get["title"],
+                user_name,
+                td.get["completed"],
+                td.get["title"],
                 ]
-            ] for td in todo
+            ] for td in todo_data
 
     with open(file_name, "w", newline="") as file:
 
