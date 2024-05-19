@@ -8,7 +8,7 @@ import sys
 
 if __name__ == '__main__':
 
-    file_name = f"{employee_id}.json"
+    file_name = f"todo_all_employees.json"
     link = "https://jsonplaceholder.typicode.com/"
 
     request = requests.get(f"{link}/users")
