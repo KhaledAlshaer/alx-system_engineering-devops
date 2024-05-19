@@ -21,7 +21,7 @@ if __name__ == '__main__':
     todo_data = todo.json()
 
     json_data = {
-            str(employee_id): [
+            employee_id: [
                 {
                     "task": td.get("title"),
                     "completed": td.get("completed"),
