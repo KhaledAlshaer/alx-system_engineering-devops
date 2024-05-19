@@ -8,10 +8,10 @@ import sys
 
 if __name__ == '__main__':
 
-        file_name = f"{user_id}.csv"
-        link = "https://jsonplaceholder.typicode.com/"
-        employee_id = sys.argv[1]
-        params = {"userId": employee_id}
+    file_name = f"{user_id}.csv"
+    link = "https://jsonplaceholder.typicode.com/"
+    employee_id = sys.argv[1]
+    params = {"userId": employee_id}
 
     request = requests.get(f"{link}/users/{employee_id}")
     data = request.json()
