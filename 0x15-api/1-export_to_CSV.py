@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-""" Python script to export 
-data in the CSV format """
+""" Python script to export data in the CSV format """
+
 import csv
 import requests
 import sys
@@ -21,10 +21,10 @@ if __name__ == '__main__':
 
     csv_data = [
             [
-                todo.get["userID"]
-                todo.get["username"]
-                todo.get["completed"]
-                todo.get["title"]
+                employee_id,
+                todo.get["username"],
+                todo.get["completed"],
+                todo.get["title"],
                 ]
             ] for td in todo
 
