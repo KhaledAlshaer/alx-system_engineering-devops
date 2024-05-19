@@ -17,10 +17,8 @@ if __name__ == '__main__':
     user_data = request.json()
     user_name = user_data.get("username")
 
-
     todo = requests.get(f"{link}/todos", params=params)
     todo_data = todo.json()
-
 
     csv_data = [
         [
