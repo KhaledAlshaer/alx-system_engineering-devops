@@ -1,32 +1,34 @@
 #!/usr/bin/python3
-""" Python script to export data in the Json format """
+""" Python script to export data in the JSON format """
 
 import json
 import requests
-import sys
 
 
 if __name__ == '__main__':
 
-    file_name = f"todo_all_employees.json"
+    file_name = "todo_all_employees.json"
     link = "https://jsonplaceholder.typicode.com/"
 
-    request = requests.get(f"{link}/users")
-    user_data = request.json()
-    name = user_data.get("username")
+    users_response = requests.get(f"{link}/users")
+    users_data = users_response.json()
 
-    todo = requests.get(f"{link}/todos")
-    todo_data = todo.json()
+    todos_response = requests.get(f"{link}/todos")
+    todos_data = todos_response.json()
 
-    json_data = {
-            request.get("id"): [
-                {
-                    "task": td.get("title"),
-                    "completed": td.get("completed"),
-                    "username": name
-                    } for td in todo_data
-                ] for user in request
+    json_data = {}
+    for user in users_data:
+        user_id = user.get("id")
+        username = user.get("username")
+        user_tasks = [
+            {
+                "username": username,
+                "task": td.get("title"),
+                "completed": td.get("completed")
             }
+            for td in todos_data if td.get("userId") == user_id
+        ]
+        json_data[user_id] = user_tasks
 
     with open(file_name, "w") as file:
         json.dump(json_data, file)
