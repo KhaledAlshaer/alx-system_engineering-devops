@@ -1,24 +1,8 @@
 #!/usr/bin/env bash
-# Instaling Nginx
-
-
-echo -e "\t>>> Updating sys, installing Nginx and starting it...\n"
-sudo apt-get -y update
-sudo apt-get -y install nginx
+# Installs, configures, and starts the server
+# Imanol Asolo
+sudo apt-get update
+sudo apt-get install -y nginx
+sudo chown -R ubuntu /var/www
+echo "Hello World" > /var/www/html/index.nginx-debian.html
 sudo service nginx start
-
-echo -e "\n\t>>> Allowing incoming traffic through HTTP...\n"
-sudo ufw allow "Nginx HTTP"
-
-echo -e "\n\t>>> Backing up files & Setting up configurations...\n"
-sudo chown -R "$USER":"$USER" /var/www/html 
-sudo chmod -R 755 /var/www
-cp /var/www/html/index.nginx-debian.html /var/www/html/index.nginx-debian.html.backup
-
-
-echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html
-
-
-sudo service restart
-
-echo -e "\n\t>>> Completed.\n"
